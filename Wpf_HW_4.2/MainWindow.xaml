@@ -1,0 +1,178 @@
+﻿<Window x:Class="Wpf_HW_4._2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_HW_4._2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Валюта">
+                <UniformGrid Rows="2" Columns="2">
+                    <GroupBox Header="Доллары в рубли" Margin="10" Padding="5" BorderThickness="2" BorderBrush="#FF002BEC">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Введите курс доллара"/>
+                            <TextBox x:Name="rate" Grid.Row="0" Grid.Column="1" Margin="3" Padding="1"/>
+                            <Label Content="Введите сумму" Grid.Row="1" />
+                            <TextBox x:Name="summ" Grid.Row="1" Grid.Column="1" Margin="3" Padding="1"/>
+                            <Button Content="Рассчитать" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,2" Click="Button_Dollar"/>
+                            <Label Content="Результат" Grid.Row="3" Grid.Column="0" Margin="3" Padding="1"/>
+                            <TextBox x:Name="result" Grid.Row="3" Grid.Column="1" Margin="3" Padding="1" IsReadOnly="True" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Евро в рубли" Margin="10" Padding="5" BorderThickness="2" BorderBrush="#FF002BEC">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Введите курс евро"/>
+                            <TextBox x:Name="rate1" Grid.Row="0" Grid.Column="1" Margin="3" Padding="1"/>
+                            <Label Content="Введите сумму" Grid.Row="1" />
+                            <TextBox x:Name="summ1" Grid.Row="1" Grid.Column="1" Margin="3" Padding="1"/>
+                            <Button Content="Рассчитать" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,2" Click="Button_Euro"/>
+                            <Label Content="Результат" Grid.Row="3" Grid.Column="0" Margin="3" Padding="1"/>
+                            <TextBox x:Name="result1" Grid.Row="3" Grid.Column="1" Margin="3" Padding="1" IsReadOnly="True" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Юани в рубли" Margin="10" Padding="5" BorderThickness="2" BorderBrush="#FF002BEC">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Введите курс юаней"/>
+                            <TextBox x:Name="rate2" Grid.Row="0" Grid.Column="1" Margin="3" Padding="1"/>
+                            <Label Content="Введите сумму" Grid.Row="1" />
+                            <TextBox x:Name="summ2" Grid.Row="1" Grid.Column="1" Margin="3" Padding="1"/>
+                            <Button Content="Рассчитать" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,2" Click="Button_uan"/>
+                            <Label Content="Результат" Grid.Row="3" Grid.Column="0" Margin="3" Padding="1"/>
+                            <TextBox x:Name="result2" Grid.Row="3" Grid.Column="1" Margin="3" Padding="1" IsReadOnly="True" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Биткоины в рубли" Margin="10" Padding="5" BorderThickness="2" BorderBrush="#FF002BEC">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Введите курс биткоин"/>
+                            <TextBox x:Name="rate3" Grid.Row="0" Grid.Column="1" Margin="3" Padding="1"/>
+                            <Label Content="Введите сумму" Grid.Row="1" />
+                            <TextBox x:Name="summ3" Grid.Row="1" Grid.Column="1" Margin="3" Padding="1"/>
+                            <Button Content="Рассчитать" Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,2" Click="Button_Bit"/>
+                            <Label Content="Результат" Grid.Row="3" Grid.Column="0" Margin="3" Padding="1"/>
+                            <TextBox x:Name="result3" Grid.Row="3" Grid.Column="1" Margin="3" Padding="1" IsReadOnly="True" />
+                        </Grid>
+                    </GroupBox>
+                </UniformGrid>
+
+            </TabItem>
+            <TabItem Header="Расстояние">
+                <UniformGrid Rows="2" Columns="2">
+                    <GroupBox Header="Миллиметры в метры" Margin="10" Padding="5" BorderThickness="2" BorderBrush="#FF002BEC">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Введите миллиметры" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                            <TextBox x:Name="rate4" Grid.Row="0" Grid.Column="1" Margin="3" Padding="1"/>
+                            <Button Content="Рассчитать" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,2" Click="Button_Click_4"/>
+                            <Label Content="Результат" Grid.Row="2" Grid.Column="0" Margin="3" Padding="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                            <TextBox x:Name="result4" Grid.Row="3" Grid.Column="1" Margin="3" Padding="1" IsReadOnly="True" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Футы в метры" Margin="10" Padding="5" BorderThickness="2" BorderBrush="#FF002BEC">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Введите футы" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                            <TextBox x:Name="rate5" Grid.Row="0" Grid.Column="1" Margin="3" Padding="1"/>
+                            <Button Content="Рассчитать" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,2" Click="Button_Click_5"/>
+                            <Label Content="Результат" Grid.Row="2" Grid.Column="0" Margin="3" Padding="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                            <TextBox x:Name="result5" Grid.Row="3" Grid.Column="1" Margin="3" Padding="1" IsReadOnly="True" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Спаны в метры" Margin="10" Padding="5" BorderThickness="2" BorderBrush="#FF002BEC">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Введите спаны" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                            <TextBox x:Name="rate6" Grid.Row="0" Grid.Column="1" Margin="3" Padding="1"/>
+                            <Button Content="Рассчитать" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,2" Click="Button_Click_6"/>
+                            <Label Content="Результат" Grid.Row="2" Grid.Column="0" Margin="3" Padding="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                            <TextBox x:Name="result6" Grid.Row="3" Grid.Column="1" Margin="3" Padding="1" IsReadOnly="True" />
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Header="Сажени косые старорусские в метры" Margin="10" Padding="5" BorderThickness="2" BorderBrush="#FF002BEC">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Введите сажени" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                            <TextBox x:Name="rate7" Grid.Row="0" Grid.Column="1" Margin="3" Padding="1"/>
+                            <Button Content="Рассчитать" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Margin="10,2" Click="Sagen"/>
+                            <Label Content="Результат" Grid.Row="2" Grid.Column="0" Margin="3" Padding="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center"/>
+                            <TextBox x:Name="result7" Grid.Row="3" Grid.Column="1" Margin="3" Padding="1" IsReadOnly="True" />
+                        </Grid>
+                    </GroupBox>
+                </UniformGrid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
